@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+
+:root {
+  --bg-primary: #0b1a2d;
+  --bg-secondary: #10223a;
+  --bg-card: #142944;
+
+  --text-primary: #f7f9fc;
+  --text-secondary: #b8c4d5;
+  --text-muted: #7f8ea3;
+
+  --gold: #e4b95f;
+  --gold-light: #f3d37d;
+
+  --blue: #5b9cff;
+
+  --border: rgba(255, 255, 255, 0.1);
+
+  --container: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-primary);
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "DM Sans", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+::selection {
+  background: rgba(228, 185, 95, 0.25);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #091525;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #263a55;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #385170;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
