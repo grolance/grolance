@@ -68,7 +68,7 @@ function Footer() {
                     <h4>CONNECT</h4>
 
                     <a
-                        href="https://www.instagram.com/grolance_?stkn=bzJzbW9obGV3M2Vo"
+                        href="https://www.instagram.com/grolance_"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

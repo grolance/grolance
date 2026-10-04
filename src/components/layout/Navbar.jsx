@@ -8,6 +8,7 @@ function Navbar() {
     const location = useLocation();
 
     const navItems = [
+        { label: "Home", path: "/" },
         { label: "Insights", path: "/insights" },
         { label: "AI & Tech", path: "/ai" },
         { label: "Resources", path: "/resources" },
@@ -36,7 +37,41 @@ function Navbar() {
         });
     };
 
+    const handleNewsletter = () => {
+        setMenuOpen(false);
+
+        if (location.pathname === "/") {
+            const newsletter = document.getElementById("newsletter");
+
+            if (newsletter) {
+                newsletter.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+
+            return;
+        }
+
+        navigate("/");
+
+        setTimeout(() => {
+            const newsletter = document.getElementById("newsletter");
+
+            if (newsletter) {
+                newsletter.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        }, 100);
+    };
+
     const isActive = (path) => {
+        if (path === "/") {
+            return location.pathname === "/";
+        }
+
         if (path === "/insights") {
             return (
                 location.pathname === "/insights" ||
@@ -47,6 +82,10 @@ function Navbar() {
         return location.pathname === path;
     };
 
+    const isNewsletterActive =
+        location.pathname === "/" &&
+        window.location.hash === "#newsletter";
+
     return (
         <header className="navbar">
             <div className="navbar-container">
@@ -56,7 +95,15 @@ function Navbar() {
                     onClick={handleLogoClick}
                     aria-label="Go to Grolance home"
                 >
-                    Grolance
+                    <img
+                        src="/favicon.png"
+                        alt=""
+                        className="navbar-logo-image"
+                    />
+
+                    <span className="navbar-logo-text">
+                        Grolance
+                    </span>
                 </button>
 
                 <nav
@@ -73,6 +120,14 @@ function Navbar() {
                             {item.label}
                         </Link>
                     ))}
+
+                    <button
+                        type="button"
+                        className={isNewsletterActive ? "active" : ""}
+                        onClick={handleNewsletter}
+                    >
+                        Newsletter
+                    </button>
                 </nav>
 
                 <div className="navbar-actions">
@@ -90,25 +145,11 @@ function Navbar() {
                             <path d="M16 16L21 21" />
                         </svg>
                     </button>
-
-                    <span
-                        className="navbar-divider"
-                        aria-hidden="true"
-                    ></span>
-
-                    <button
-                        type="button"
-                        className="navbar-follow"
-                        onClick={() => handleNavigation("/")}
-                    >
-                        Home
-                    </button>
                 </div>
 
                 <button
                     type="button"
-                    className={`navbar-menu ${menuOpen ? "is-open" : ""
-                        }`}
+                    className={`navbar-menu ${menuOpen ? "is-open" : ""}`}
                     onClick={() => setMenuOpen((value) => !value)}
                     aria-label={
                         menuOpen
@@ -145,16 +186,6 @@ function Navbar() {
                     <button
                         type="button"
                         className={
-                            location.pathname === "/" ? "active" : ""
-                        }
-                        onClick={() => handleNavigation("/")}
-                    >
-                        Home
-                    </button>
-
-                    <button
-                        type="button"
-                        className={
                             location.pathname === "/search"
                                 ? "active"
                                 : ""
@@ -162,6 +193,14 @@ function Navbar() {
                         onClick={() => handleNavigation("/search")}
                     >
                         Search
+                    </button>
+
+                    <button
+                        type="button"
+                        className={isNewsletterActive ? "active" : ""}
+                        onClick={handleNewsletter}
+                    >
+                        Newsletter
                     </button>
                 </nav>
             )}
