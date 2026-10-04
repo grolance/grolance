@@ -149,7 +149,7 @@
 .hero-section {
   position: relative;
   min-height: 780px;
-  padding: 150px 0 90px;
+  padding: 62px 0 90px;
   overflow: hidden;
   background:
     radial-gradient(circle at 80% 25%,
@@ -9936,5 +9936,41 @@ button:not(:disabled):active {
   .page-header,
   .tool-page-header {
     padding-top: 40px !important;
+  }
+}
+
+/* =========================================================
+   GROLANCE — FORCE FIXED NAVBAR
+========================================================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 99999 !important;
+  transform: none !important;
+}
+
+.navbar-container {
+  position: relative !important;
+  z-index: 100000 !important;
+}
+
+/* Keep page content below the fixed navbar */
+.hero-section {
+  padding-top: 95px !important;
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding-top: 88px !important;
   }
 }

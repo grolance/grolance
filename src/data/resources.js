@@ -25,20 +25,20 @@ export const resources = [
     {
         id: 2,
 
-        slug: "small-business-growth-guide",
+        slug: "business-growth-guide",
 
         type: "GUIDE",
 
-        title: "Small Business Growth Guide",
+        title: "Business Growth Guide",
 
         description:
             "A practical guide to finding opportunities, improving operations and growing consistently.",
 
         format: "PDF",
 
-        file: "/resources/small-business-growth-guide.pdf",
+        file: "/resources/business-growth-guide.pdf",
 
-        preview: "/images/resources/small-business-growth-guide.jpg",
+        preview: "/images/resources/business-growth-guide.jpg",
 
         isFree: true,
 

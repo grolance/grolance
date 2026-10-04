@@ -12,7 +12,7 @@ Grolance/
 │   │
 │   ├── resources/
 │   │   ├── business-kpi-tracker.xlsx
-│   │   ├── small-business-growth-guide.pdf
+│   │   ├── business-growth-guide.pdf
 │   │   └── business-data-checklist.pdf
 │   │
 │   ├── favicon.svg
